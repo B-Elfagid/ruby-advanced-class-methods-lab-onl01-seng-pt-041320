@@ -41,7 +41,7 @@ class Song
   @@all.sort_by{|song| song.name}
   end
   
-  def self.new_from_filename(filename)
+    def self.new_from_filename(filename)
   split_filename = filename.chop.chop.chop.chop.split(" - ")
   song = Song.new
   song.name = split_filename[1]
@@ -49,16 +49,17 @@ class Song
   song
 end
   
-def self.create_from_filename(name)
-  split_filename = name.chop.chop.chop.chop.split(" - ")
+def self.create_from_filename(filename)
+  split_filename = filename.chop.chop.chop.chop.split(" - ")
   song = Song.new
-  song.name = split_name[1]
-  song.artist_name = split.name[0]
+  song.name = split_filename[1]
+  song.artist_name = split.filename[0]
   song.save
   song
 end
 
-  def self.destroy_all
+
+def self.destroy_all
   @@all.clear
   end
 
